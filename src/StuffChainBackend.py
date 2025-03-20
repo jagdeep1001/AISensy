@@ -30,7 +30,7 @@ def load_and_process_urls(urls):
 
 def get_answer(retr ,question):
     # retriever = vector_store.as_retriever(search_kwargs={"k": 5}, search_type="mmr")
-    llm = ChatOpenAI(temperature=0.2, model_name="gpt-4o",api_key="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")
+    llm = ChatOpenAI(temperature=0.2, model_name="gpt-4o")
     relevent_docs = retr.get_relevant_documents(question)
     prompt = PromptTemplate(
         input_variables=["context", "question"],
@@ -48,15 +48,3 @@ def get_answer(retr ,question):
     chain = create_stuff_documents_chain(llm , prompt)
     res = chain.invoke({"context": relevent_docs, "question": question})
     return res
-
-
-def main():
-    os.environ["OPENAI_API_KEY"] = "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"
-    vs = load_and_process_urls(["https://en.wikipedia.org/wiki/Rain","https://aisensy.com/"])
-    question = "What does AI Sensy do"
-    res = get_answer(vs, question)
-    print(res)
-
-if __name__=="__main__":
-    main()
-
