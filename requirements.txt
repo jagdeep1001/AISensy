@@ -1,0 +1,11 @@
+streamlit
+langchain
+langchain_community
+bs4
+tqdm
+langchain_unstructured
+unstructured
+openai
+langgraph
+langchain_openai
+faiss-cpu
