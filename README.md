@@ -1,5 +1,9 @@
 # Web Data Extractor with OpenAI
 
+##Can be accessed at URL  : 
+```
+https://aisensy-adunakgrnxjs7rck6bobbf.streamlit.app/
+```
 ## Overview
 This Streamlit-based application allows users to:
 - Securely enter their OpenAI API key.
